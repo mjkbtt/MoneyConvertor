@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/convertMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:background="#FFFFFF">
+
+    <!-- gravity="center" өгснөөр ямар ч урт/богино дэлгэцтэй утсан дээр агуулга нь яг голдоо төвлөрнө -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="20dp"
+        tools:context=".ConvertActivity">
+
+        <!-- Дээд талын туг (Хүрээтэй карт) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="220dp"
+            android:layout_height="140dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#D5D5D5">
+
+            <ImageView
+                android:id="@+id/imgCurrencyFlag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                tools:src="@drawable/flag_eu" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Валют сонгох Spinner (EUR ▼) -->
+        <Spinner
+            android:id="@+id/spnCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:spinnerMode="dropdown" />
+
+        <!-- Дүн оруулах хэсэг (153.0 ✎) -->
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:text="0"
+                    android:selectAllOnFocus="true"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
+                    android:paddingBottom="4dp" />
+
+                <!-- Багшийн зураг дээрх жижиг харандааны дүрс -->
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    android:src="@drawable/ic_edit_pencil" />
+            </RelativeLayout>
+
+            <!-- Доод зураас -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#222222" />
+        </LinearLayout>
+
+        <!-- "Хөрвүүлэх" товчлуур -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConvert"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="28dp"
+            android:text="Хөрвүүлэх"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:backgroundTint="#9FA8DA"
+            app:cornerRadius="6dp" />
+
+        <!-- Үр дүн харуулах хэсэг (570,078) -->
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="28dp">
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:paddingBottom="4dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#222222" />
+        </LinearLayout>
+
+        <!-- MNT бичиг -->
+        <TextView
+            android:id="@+id/tvMnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="MNT"
+            android:textColor="#000000"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <!-- Монгол улсын төрийн далбаа (Хүрээтэй карт) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="220dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#D5D5D5">
+
+            <ImageView
+                android:id="@+id/imgMongoliaFlag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/flag_mn" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

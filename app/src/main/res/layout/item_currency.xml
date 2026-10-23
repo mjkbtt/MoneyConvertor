@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="2dp">
+
+        <!-- Улсын туг (Цагаан өнгөтэй тугууд уусахгүй 1dp хүрээтэй карт) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="38dp"
+            android:layout_height="25dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#D5D5D5">
+
+            <ImageView
+                android:id="@+id/imgFlag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                tools:src="@drawable/flag_jp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Валютын Монгол нэр (Жишээ нь: Евро) -->
+        <TextView
+            android:id="@+id/tvCurrencyName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            tools:text="Евро" />
+
+        <!-- Валютын код (Жишээ нь: EUR) -->
+        <TextView
+            android:id="@+id/tvCurrencyCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="EUR" />
+    </LinearLayout>
+
+    <!-- Мөр хоорондын нимгэн саарал зураас -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EFEFEF" />
+
+</LinearLayout>
